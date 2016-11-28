@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28-nov-2016 13:35:22 by Hibernate Tools 4.3.1 -->
+<!-- Generated 28-nov-2016 21:21:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelo.Trenes" table="Trenes" catalog="dam20_tren" optimistic-lock="version">
+    <class name="mapeo.Trenes" table="Trenes" catalog="dam20_tren" optimistic-lock="version">
         <id name="codTren" type="java.lang.Integer">
             <column name="cod_tren" />
             <generator class="identity" />
         </id>
-        <many-to-one name="cocheras" class="modelo.Cocheras" fetch="select">
+        <many-to-one name="cocheras" class="mapeo.Cocheras" fetch="select">
             <column name="cochera" not-null="true" />
         </many-to-one>
-        <many-to-one name="lineas" class="modelo.Lineas" fetch="select">
+        <many-to-one name="lineas" class="mapeo.Lineas" fetch="select">
             <column name="linea" not-null="true" />
         </many-to-one>
         <property name="compa&#241;ia" type="string">

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28-nov-2016 13:35:22 by Hibernate Tools 4.3.1 -->
+<!-- Generated 28-nov-2016 21:21:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelo.Estaciones" table="Estaciones" catalog="dam20_tren" optimistic-lock="version">
+    <class name="mapeo.Estaciones" table="Estaciones" catalog="dam20_tren" optimistic-lock="version">
         <id name="codEstacion" type="int">
             <column name="cod_estacion" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="accesos" class="modelo.Accesos" fetch="select">
+        <many-to-one name="accesos" class="mapeo.Accesos" fetch="select">
             <column name="accesos" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">
@@ -27,19 +27,19 @@
             <key>
                 <column name="estacionprocedencia" />
             </key>
-            <one-to-many class="modelo.Viajes" />
+            <one-to-many class="mapeo.Viajes" />
         </set>
         <set name="lineaEstacions" table="LineaEstacion" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="cod_estacion" not-null="true" />
             </key>
-            <one-to-many class="modelo.LineaEstacion" />
+            <one-to-many class="mapeo.LineaEstacion" />
         </set>
         <set name="viajesesForEstaciondestino" table="Viajes" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="estaciondestino" />
             </key>
-            <one-to-many class="modelo.Viajes" />
+            <one-to-many class="mapeo.Viajes" />
         </set>
     </class>
 </hibernate-mapping>

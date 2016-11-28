@@ -1,5 +1,5 @@
-package modelo;
-// Generated 28-nov-2016 13:35:22 by Hibernate Tools 4.3.1
+package mapeo;
+// Generated 28-nov-2016 21:21:01 by Hibernate Tools 4.3.1
 
 
 

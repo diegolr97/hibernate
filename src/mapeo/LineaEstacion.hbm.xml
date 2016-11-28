@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28-nov-2016 13:35:22 by Hibernate Tools 4.3.1 -->
+<!-- Generated 28-nov-2016 21:21:01 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelo.LineaEstacion" table="LineaEstacion" catalog="dam20_tren" optimistic-lock="version">
-        <composite-id name="id" class="modelo.LineaEstacionId">
+    <class name="mapeo.LineaEstacion" table="LineaEstacion" catalog="dam20_tren" optimistic-lock="version">
+        <composite-id name="id" class="mapeo.LineaEstacionId">
             <key-property name="codEstacion" type="int">
                 <column name="cod_estacion" />
             </key-property>
@@ -12,10 +12,10 @@
                 <column name="cod_linea" />
             </key-property>
         </composite-id>
-        <many-to-one name="estaciones" class="modelo.Estaciones" update="false" insert="false" fetch="select">
+        <many-to-one name="estaciones" class="mapeo.Estaciones" update="false" insert="false" fetch="select">
             <column name="cod_estacion" not-null="true" />
         </many-to-one>
-        <many-to-one name="lineas" class="modelo.Lineas" update="false" insert="false" fetch="select">
+        <many-to-one name="lineas" class="mapeo.Lineas" update="false" insert="false" fetch="select">
             <column name="cod_linea" not-null="true" />
         </many-to-one>
         <property name="estado" type="string">

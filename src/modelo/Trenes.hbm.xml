@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-nov-2016 13:35:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Trenes" table="Trenes" catalog="dam20_tren" optimistic-lock="version">
+        <id name="codTren" type="java.lang.Integer">
+            <column name="cod_tren" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cocheras" class="modelo.Cocheras" fetch="select">
+            <column name="cochera" not-null="true" />
+        </many-to-one>
+        <many-to-one name="lineas" class="modelo.Lineas" fetch="select">
+            <column name="linea" not-null="true" />
+        </many-to-one>
+        <property name="compa&#241;ia" type="string">
+            <column name="compa&#241;ia" length="100" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="100" not-null="true" />
+        </property>
+        <property name="modelo" type="string">
+            <column name="modelo" length="100" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

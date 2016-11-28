@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="dam20_tren"/>
+  <table-filter match-name="Cocheras"/>
+  <table-filter match-name="Estaciones"/>
+  <table-filter match-name="Trenes"/>
+  <table-filter match-name="LineaEstacion"/>
+  <table-filter match-name="Lineas"/>
+  <table-filter match-name="Accesos"/>
+  <table-filter match-name="Viajes"/>
+</hibernate-reverse-engineering>

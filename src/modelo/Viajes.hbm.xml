@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-nov-2016 13:35:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Viajes" table="Viajes" catalog="dam20_tren" optimistic-lock="version">
+        <id name="codViaje" type="java.lang.Integer">
+            <column name="cod_viaje" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="estacionesByEstacionprocedencia" class="modelo.Estaciones" fetch="select">
+            <column name="estacionprocedencia" />
+        </many-to-one>
+        <many-to-one name="estacionesByEstaciondestino" class="modelo.Estaciones" fetch="select">
+            <column name="estaciondestino" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-nov-2016 13:35:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Accesos" table="Accesos" catalog="dam20_tren" optimistic-lock="version">
+        <id name="codAcceso" type="java.lang.Integer">
+            <column name="cod_acceso" />
+            <generator class="identity" />
+        </id>
+        <property name="lugar" type="string">
+            <column name="lugar" length="100" not-null="true" />
+        </property>
+        <set name="estacioneses" table="Estaciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="accesos" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Estaciones" />
+        </set>
+    </class>
+</hibernate-mapping>
